@@ -1,0 +1,9 @@
+node_modules/
+scratch/
+.system_generated/
+data/
+*.log
+.DS_Store
+Thumbs.db
+chrome_test.png
+

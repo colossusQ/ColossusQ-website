@@ -1,5 +1,14 @@
 {
-  "dependencies": {
-    "potrace": "^2.1.8"
+  "name": "colossusq-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production website for Colossus Q - Experiential marketing and event production agency.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.158.0"
   }
 }

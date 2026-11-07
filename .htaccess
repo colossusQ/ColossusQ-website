@@ -38,6 +38,9 @@ Options -Indexes -MultiViews
 # ------------------------------------------------------------------------------
 # 3. Clean URLs & Routing
 # ------------------------------------------------------------------------------
+# Prioritize index.html over Cloudways default index.php
+DirectoryIndex index.html index.php
+
 <IfModule mod_rewrite.c>
   # Ensure trailing slash on directories if requested without one
   RewriteCond %{REQUEST_FILENAME} -d
@@ -140,3 +143,4 @@ Options -Indexes -MultiViews
     Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
 </IfModule>
+

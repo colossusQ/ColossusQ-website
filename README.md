@@ -113,11 +113,24 @@ npm i -g vercel
 vercel --prod
 ```
 
-### Option 2: Netlify / Cloudflare Pages
-Directly connect your GitHub repository or drag-and-drop the directory. The `_headers` file automatically applies production security policies.
+### Option 2: Cloudways (Managed Cloud Server)
+1. In Cloudways Platform, create a **Custom App (PHP)** application on your server.
+2. Under **Application Management > Deployment via Git**:
+   - Generate and add the Cloudways SSH key to GitHub (Repository **Settings > Deploy keys**).
+   - Remote Address: `git@github.com:colossusQ/ColossusQ-website.git`
+   - Branch: `main`
+   - Deployment Path: leave **blank** (deploys to default `public_html/`).
+3. Click **Start Deployment**. The included `.htaccess` automatically configures Gzip, Far-Future Caching, clean URLs, and security headers.
 
-### Option 3: GitHub Pages
-Go to your repository **Settings > Pages** and select `main` branch root `/` as the deployment source.
+### Option 3: Cloudflare Workers / Pages
+Pre-configured with `wrangler.jsonc` and `_headers`. Deploy with:
+```bash
+npx wrangler deploy
+```
+
+### Option 4: Netlify / GitHub Pages
+- **Netlify:** Connect repository directly; `_headers` applies security policies.
+- **GitHub Pages:** Select `main` branch root `/` as deployment source.
 
 ---
 
